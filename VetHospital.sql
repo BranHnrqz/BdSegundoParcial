@@ -1,5 +1,5 @@
-create database HospitalVeterinario;
-USE [HospitalVeterinario]
+create database VetHospital;
+USE [VetHospital]
 GO
 
 CREATE TABLE [dbo].[PropietarioMascota](
@@ -83,14 +83,6 @@ CREATE TABLE [dbo].[TipoMascota](
 	[IdTipoMascota] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
 	[IdTipo] [int] FOREIGN KEY (IdTipo) REFERENCES [dbo].[Tipo](IdTipo),
 	[NumIdentidadMascota] [int] FOREIGN KEY (NumIdentidadMascota) REFERENCES [dbo].[Mascota](NumIdentidadMascota),
-	)
-GO
-
-/* Tabla para determinar los posibles Cargos que tendrán los Veterinarios */ 
-CREATE TABLE [dbo].[Cargos](
-	[IdCargo] [int] IDENTITY(1,1) NOT NULL PRIMARY KEY,
-	[Nombre] [varchar] (50) NOT NULL,
-	[IdVeterinario] [int] FOREIGN KEY (IdVeterinario) REFERENCES [dbo].[Veterinario](IdVeterinario),
 	)
 GO
 
